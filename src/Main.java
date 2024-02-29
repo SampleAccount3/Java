@@ -1,47 +1,52 @@
+import java.util.function.BinaryOperator;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Animals askal = new Dog();
-        Animals pusakal = new Cat();
+        // Generic Class
+        Generics<String> genString = new Generics<>("Melares");
+        genString.Print();
 
-        askal.setName("Dog");
-        pusakal.setName("Kuting");
+        Generics<Integer> genInt = new Generics<>(2, 1);
 
-        Animals[] animals = new Animals[2];
-        animals[0] = askal;
-        animals[1] = pusakal;
+        System.out.println(
+                genInt.Compute2(Integer::sum)
+        );
+        System.out.println(
+                genInt.Compute2((a,b) -> a-b)
+        );
+        System.out.println(
+                genInt.Compute2((a,b) -> a/b)
+        );
+        System.out.println( genInt.Compute2(Integer::sum));
 
-        for(Animals var: animals){
-            System.out.println(var.getName()+" is Good?: " + var.getisGood());
-        }
-//        System.out.println(askal.getName()+" is Good?: " + askal.getisGood());
-//        System.out.println(pusakal.getName()+" is Good?: " + pusakal.getisGood());
-//        the Animal class can only read the method inside the animal class
-//        the Animal class can read the static methods
-        isHeGood(askal);
-        isHeGood(pusakal);
+        Generics<Float> genFloat = new Generics<>(2.1f, 1.1f);
+        System.out.println(
+                genFloat.Compute3(Float::sum)
+        );
+        System.out.println(
+                genFloat.Compute3((a,b) -> a-b)
+        );
+        System.out.println(
+                genFloat.Compute3((a,b) -> a/b)
+        );
 
-        pusakal.AnimalName();
-        askal.AnimalName();
+        GenericMethod("Melares");
+        GenericMethod(2);
+        GenericMethod(3.2);
+        GenericMethod('+');
 
-        Creature human = new Human();
-        Creature person = new Human();
-
-        human.setName("Melanio");
-        human.setAge(23);
-
-        person.setName("flores");
-        person.setAge(123);
-
-        System.out.println(human.getName() + " " + human.getAge());
-
-        System.out.println(person.getName()+ person.getAge());
+        System.out.println(Compute(2,1, (a,b) -> a+b));
+    }
+    //Generic Methods the print parameter can take any datatype
+    public static <T> void GenericMethod(T print){
+        System.out.println(print);
     }
 
-
-    public static void isHeGood(Animals animal){
-        System.out.println("Is he good? " + animal.getisGood());
+    // you can have multiple generics <T,T2>
+    public static <T> T Compute(T Num1,T Num2,BinaryOperator<T> operator){
+        return operator.apply(Num1,Num2);
     }
+
 }
