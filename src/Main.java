@@ -4,6 +4,14 @@ public class Main {
 
     public static void main(String[] args) {
 
+//        When to Use:
+//        Generics: <T>
+//        Use generics when you want to create classes, interfaces, or methods that
+//        can operate on any data type while maintaining strong type safety.
+//        Wildcards: <?>
+//        Use wildcards when you want to write more flexible and general-purpose code
+//        that can work with a range of types without specifying the exact type.
+
         // Generic Class
         Generics<String> genString = new Generics<>("Melares");
         genString.Print();
