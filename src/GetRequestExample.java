@@ -31,12 +31,13 @@ public class GetRequestExample {
                 StringBuilder response = new StringBuilder();
                 while ((line = reader.readLine()) != null) {
                     response.append(line);
+                    System.out.println();
                 }
-                System.out.println("Response: " + response.toString());
+                // Close the connection
+                connection.disconnect();
+                System.out.println(response.toString());
             }
 
-            // Close the connection
-            connection.disconnect();
         } catch (IOException e) {
             e.printStackTrace();
         }
