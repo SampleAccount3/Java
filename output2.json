@@ -1,7 +1,7 @@
 {
     "address3": "",
-    "address2": "QUEZON CITY",
     "city": "QUEZON CITY",
+    "address2": "QUEZON CITY",
     "address1": "#107 J.PINEDA ST., BALINTAWAK",
     "phone2": "",
     "reference1": "",
@@ -15,8 +15,8 @@
     "customerType": "0",
     "facsimileNumber": "",
     "company": "",
-    "address4": "",
     "place": "NCR",
     "freeField6": "-",
+    "address4": "",
     "email": ""
 }
