@@ -5,15 +5,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-
 public class JsonExample {
 
     public static void main(String[] args) {
         try {
-            String urlString = "http://192.168.1.51:88/Wilcon.TSSS.Tablet/Request.aspx?function=validatetimestamp&unix=1709608596";
+            String urlString = "http://192.168.1.51:88/Wilcon.TSSS.Tablet/Request.aspx?function=validatetimestamp&unix=1709803758";
 
             // Read data from the URL
-            String jsonData = readJsonFromUrl(urlString);
+            String jsonData = readJsonFromUrl(urlString);//jsonData = {"valid":"False"}
 
             // Parse the JSON data
             TimeStampObject timeStampObject = getTimeStampObjectFromJson(jsonData);
