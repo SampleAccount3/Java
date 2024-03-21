@@ -2,21 +2,35 @@
 public class Main {
     public static void main(String[] args) {
         System.out.println("HEllo WOrld");
-        // creates 5 new instance of multiThreading
-        for (int i = 1; i <= 5; i++) {
-            MultiThreading multiThreading = new MultiThreading(i);
-            // implementing the Runnable has more advantage than extending the Thread
-            // call the Thread class then pass the ultiThreading class as a target
-            Thread myThread = new Thread(multiThreading);
-            // Starts the Thread
-            myThread.start();
-            try {
-                // w8s for the Thread to die then continue the next Thread
-                // Try Catch is Required
-                myThread.join();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        }
+        // shows the Number of Threads Currently Running
+        System.out.println(Thread.activeCount());
+        // sets the Name of the current Thread
+        // default name is main
+        Thread.currentThread().setName("CustomName");
+        // gets the Name of the current Thread
+        System.out.println(Thread.currentThread().getName());
+
+        // Thread Priority Scaling 1-10 (1 = Lowest|10 = Highest)
+        // sets the Priorityoof this Thread
+        Thread.currentThread().setPriority(10);
+        // check the Priority of this Thread
+        System.out.println(Thread.currentThread().getPriority());
+
+        // checks the current Thread if its running
+        System.out.println("Is this Thread Alive?: "+Thread.currentThread().isAlive());
+
+        MyThread myThread = new MyThread();
+        myThread.setName("MyThread");
+        System.out.println(myThread.getName());// MyThread
+        myThread.start(); // This Thread is running
+
+
+        MyThread myThread1 = new MyThread();
+        myThread1.setName("MyThread1");
+        System.out.println(myThread1.getName());// MyThread1
+        myThread1.start(); // This Thread is running
+
+
+
     }
 }
