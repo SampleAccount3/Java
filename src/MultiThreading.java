@@ -1,11 +1,8 @@
 public class MultiThreading implements Runnable {
-
     int threadCount;
     public MultiThreading (int threadCount){
         this.threadCount = threadCount;
     }
-
-
     @Override
     public synchronized void run() {
         for (int i = 1; i <= 10; i++){

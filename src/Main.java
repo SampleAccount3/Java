@@ -2,8 +2,8 @@
 public class Main {
     public static void main(String[] args) {
         System.out.println("HEllo WOrld");
-
-        for (int i = 1; i <=5; i++ ){
+        // creates 5 new instance of multiThreading
+        for (int i = 1; i <= 5; i++) {
             MultiThreading multiThreading = new MultiThreading(i);
             // implementing the Runnable has more advantage than extending the Thread
             // call the Thread class then pass the ultiThreading class as a target
@@ -18,9 +18,5 @@ public class Main {
                 throw new RuntimeException(e);
             }
         }
-
-
-
-
     }
 }
